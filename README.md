@@ -13,9 +13,10 @@ release ships.
   ships as `libmp3lame`. This is the upstream LAME 3.100 source with the changes
   recorded in `lame/SNAFU_PATCHES.md`; LAME's `COPYING` and `LICENSE` texts ship
   alongside it.
-- `heif/`: the upstream source archives for the unmodified libheif and libde265
-  builds Snafu ships as `libheif` and `libde265`, pinned by URL and SHA-256 in
-  `heif/SOURCES.md`, with their license texts under `heif/licences/`.
+- `heif/`: source links for the unmodified libheif and libde265 builds Snafu ships
+  as `libheif` and `libde265`, pinned by version, URL and archive SHA-256 in
+  `heif/SOURCES.md`, with the license texts extracted from those archives under
+  `heif/licences/`.
 - `notices/`: copies of `THIRD_PARTY_NOTICES.md` and `THIRD_PARTY_RUST_NOTICES.md`
   as they ship in the app bundle's `Resources` folder.
 
