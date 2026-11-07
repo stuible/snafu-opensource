@@ -45,6 +45,12 @@ never linked statically: the app loads it from its bundle or next to the executa
    `bitstream.c` writes a debug counter (`hogege`) that nothing reads; it can't change output.
 5. **Exports.** The two setters are declared in `include/lame.h`, and listed in
    `include/libmp3lame.sym` and `include/lame.def`.
+6. **Windows module name.** Upstream's `lame.def` opens with `LIBRARY libmp3lame.DLL`,
+   which `link.exe` honours over the `/OUT:` name: the import library then records the
+   module as `libmp3lame.DLL`, so a Snafu EXE built against `mp3lame.lib` imports
+   `libmp3lame.DLL` while the build ships the binary as `mp3lame.dll`, and Windows
+   cannot find the encoder at load time. The declaration now reads
+   `LIBRARY mp3lame.dll`; the export list and ordinals are unchanged.
 
 ## Verified
 
